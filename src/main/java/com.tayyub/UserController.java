@@ -1,5 +1,6 @@
 package com.tayyub;
 
+import com.tayyub.domain.Credentials;
 import com.tayyub.domain.Person;
 import com.tayyub.domain.Role;
 import com.tayyub.domain.User;
@@ -22,6 +23,13 @@ public class UserController {
 
         return userOrchestrator.createUser(user);
 
+    }
+
+
+    @RequestMapping(value = "/usercheck", method = RequestMethod.POST)
+    public User usercheck(@RequestBody Credentials credentials){
+
+        return userOrchestrator.checkUser(credentials.getUsername());
     }
 
 

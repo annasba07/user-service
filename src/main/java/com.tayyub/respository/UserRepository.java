@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by abinadil on 8/15/2015.
  */
-@Repository
+
 public interface UserRepository extends MongoRepository<User,String>{
 
 
-
+        public User findByCredentials_Username(String username);
 
 
 }

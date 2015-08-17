@@ -17,8 +17,16 @@ public class UserOrchestrator {
 
     public User createUser(User user){
 
+
         return userRepository.save(user);
 
+    }
+
+
+    public User checkUser(String username){
+
+
+        return userRepository.findByCredentials_Username(username);
     }
 
 
